@@ -34,7 +34,24 @@ UserDetailsService 인터페이스 구현하여 CustomUserDetailsService 클래�
 
 UserDetailsService의 loadUserByUsername(Authentication authentication) 메소드 구현이 핵심이다.
 
-loadUserByUsername 메소드를 통해 Repository에 Authentication 객체의 ID와 일치하는 회원이 존재하는지 검색한다.
+loadUserByUsername 메소드를 통해 Authentication 객체의 ID와 일치하는 회원이 Repository에 존재하는지 검색한다.
 
 만약 존재한다면 AccountContext(account, roles) 객체를 생성한 후 반환한다.
+
+
+## 4. AuthenticationProvider 인터페이스 구현
+
+AuthenticationManager(ProviderManager)에서 사용하기 위한 AuthenticationProvider 인터페이스를 구현한다.
+
+Authentication 객체와 UserDetailsService의 loadUserByUsername을 통해 가져온 Account 객체의 ID와 Password를 비교한다.
+
+비교가 완료되면 ID, Password, 그리고 권한정보를 AuthenticationToken 객체에 추가하며 반환한다. 
+
+## 5. WebAuthenticationDetails, AuthenticationDetailsSource 구현
+
+AuthenticationProvider에서 ID와 Password 뿐만 아니라 추가정보를 검증할 필요성이 존재할 수 있다.
+
+이때 추가정보를 담은 객체가 WebAuthenticationDetails이다. 이는 인터페이스이므로 구현이 필요하다.
+
+AuthenticationDetailsSource는 WebAuthenticationDetails를 생성하기 위한 객체이다. 마찬가지로 인터페이스이므로 구현이 필요하다.
 
