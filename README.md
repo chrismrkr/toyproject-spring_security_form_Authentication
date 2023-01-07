@@ -28,7 +28,6 @@ Spring Data JPA 기술을 활용했다. 스프링 싱글톤 빈으로 등록하�
 
 ![화면 캡처 2023-01-07 161135](https://user-images.githubusercontent.com/62477958/211138897-a5120173-db65-4810-ae6b-4a7106c8e549.png)
 
-...
 
 ## 3. UserDetailsService
 
