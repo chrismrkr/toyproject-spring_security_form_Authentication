@@ -26,6 +26,7 @@ Spring Data JPA 기술을 활용했다. 스프링 싱글톤 빈으로 등록하�
 
 ## 2. Form 인증 아키텍처
 
+https://user-images.githubusercontent.com/62477958/211138833-f25e5913-66d7-4a37-9464-c36f8581f39a.png
 ...
 
 ## 3. UserDetailsService
